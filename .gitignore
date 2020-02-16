@@ -1,0 +1,10 @@
+# ignore data files
+Data
+
+#ignore extensions
+*.csv
+*.zip
+*.docx
+*.txt
+*.json
+*.xml
