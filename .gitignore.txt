@@ -1,5 +1,6 @@
 # ignore data files
 Data
+Lessons
 
 #ignore extensions
 *.csv
