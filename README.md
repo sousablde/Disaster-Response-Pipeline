@@ -1,4 +1,4 @@
-![fig8](https://github.com/sousablde/Airbnb-A-tale-of-2-cities/blob/master/PvLlogo.png)
+![fig8](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/f8logo.PNG)
 
 # Data Science Nanodegree
 ## Disaster Response Pipeline
