@@ -55,7 +55,7 @@ def load_data(database_filepath):
     df = pd.read_sql_table('messages', con=engine)
     
     X = df['message']
-    y = df.drop(['message','offer','request'], axis=1)
+    y = df.drop(['message','offer','request', 'original', 'genre'], axis=1)
     category_names = y.columns.tolist()
     
     return X, y, category_names
