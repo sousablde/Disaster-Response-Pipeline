@@ -97,8 +97,9 @@ def tokenize(text):
 
 
 class StartVerbExtractor(BaseEstimator, TransformerMixin):
-
-
+    """
+    Creates feature based on verb presence in text
+    """
     def start_verb(self, text):
         sentence_list = nltk.sent_tokenize(text)
         for sentence in sentence_list:
@@ -108,7 +109,6 @@ class StartVerbExtractor(BaseEstimator, TransformerMixin):
                 if first_tag in ['VB', 'VBP'] or first_word == 'RT':
                     return 1
         return 0
-
 
     def fit(self, X, y=None):
         return self
