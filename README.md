@@ -32,7 +32,7 @@ NLP allows the extraction of great significance in text, understanding how a mod
 ## Files <a name="files"></a>
 Data was downloaded from [Figure 8](https://www.figure-eight.com/dataset/combined-disaster-response-data/).
 
-### ETL Pipeline
+#### ETL Pipeline
 
 File _data/process_data.py_ contains data cleaning pipeline that:
 
@@ -41,7 +41,7 @@ File _data/process_data.py_ contains data cleaning pipeline that:
 - Cleans the data
 - Stores it in a **SQLite database**
 
-### ML Pipeline
+#### ML Pipeline
 
 File _models/train_classifier.py_ contains machine learning pipeline that:
 
@@ -52,7 +52,7 @@ File _models/train_classifier.py_ contains machine learning pipeline that:
 - Outputs result on the test set
 - Exports the final model as a pickle file
 
-### Flask Web App
+#### Flask Web App
 
 Run the following commands in the project's root directory to set up your database and model.
 
