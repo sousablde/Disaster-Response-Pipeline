@@ -55,7 +55,7 @@ def load_data(database_filepath):
     df = pd.read_sql_table('messages', con=engine)
     
     X = df['message']
-    y = df.drop(['message','offer','request', 'original', 'genre'], axis=1)
+    y = df.drop(['message', 'genre', 'id', 'original'], axis=1)
     category_names = y.columns.tolist()
     
     return X, y, category_names
@@ -147,7 +147,7 @@ def build_model():
     ])
     
     # Parameters
-    parameters = {'tfidf__use_idf': (True, False),
+    parameters = {'features__text_pipeline__tfidf__use_idf': (True, False),
               'clf__estimator__n_estimators': [100, 200, 300], 
               'clf__estimator__random_state': [42],
              'clf__estimator__learning_rate': [0.05]} 
