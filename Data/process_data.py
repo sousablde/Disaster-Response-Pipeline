@@ -110,7 +110,7 @@ def save_data(df, database_filename):
     None.
     """
     
-    engine = create_engine('sqlite:///' + database_filename)
+    engine = create_engine('sqlite:///'+ database_filename)
     df.to_sql('messages', engine, index = False, if_exists='replace')
 
 
@@ -120,8 +120,7 @@ def main():
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
 
-        print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
-              .format(messages_filepath, categories_filepath))
+        print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'.format(messages_filepath, categories_filepath))
         df = load_data(messages_filepath, categories_filepath)
 
         print('Cleaning data...')

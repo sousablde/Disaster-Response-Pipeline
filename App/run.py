@@ -33,6 +33,7 @@ import seaborn as sns
 
 import nltk
 nltk.download(['punkt', 'wordnet'])
+from nltk.corpus import stopwords
 
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -122,7 +123,6 @@ model = joblib.load("../models/classifier.pkl")
 def index():
     
     # extract data needed for visuals
-    
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
@@ -136,6 +136,11 @@ def index():
     category_counts = df.iloc[:,4:].sum(axis = 0).sort_values(ascending = False)
     category_top = category_counts.head(10)
     category_names = list(category_top.index)
+    
+    #top words
+    word_srs = pd.Series(' '.join(df['message']).lower().split())
+    top_words = word_srs[~word_srs.isin(stopwords.words("english"))].value_counts()[:10]
+    top_words_names = list(top_words.index)
     
     # create visuals
     graphs = [
@@ -162,7 +167,6 @@ def index():
                 Bar(
                     x=label_names,
                     y=label_values,
-                    marker = dict(color='blue')
                 )
             ],
 
@@ -193,7 +197,26 @@ def index():
                     'title': "Category"
                 }
             }
+        },
+        {
+            'data': [
+                Bar(
+                    x=top_words_names,
+                    y=top_words
+                )
+            ],
+
+            'layout': {
+                'title': 'Most Frequent Words',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Words"
+                }
+            }
         }
+        
         
         
         

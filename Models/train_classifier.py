@@ -51,7 +51,7 @@ def load_data(database_filepath):
     """
     
     # load data from database
-    engine = create_engine('sqlite:///' + database_filepath)
+    engine = create_engine('sqlite:///{}'.format(database_filepath))
     df = pd.read_sql_table('messages', con=engine)
     
     X = df['message']
@@ -147,8 +147,7 @@ def build_model():
     ])
     
     # Parameters
-    parameters = {'features__text_pipeline__tfidf__use_idf': (True, False),
-              'clf__estimator__n_estimators': [100, 200, 300], 
+    parameters = {'clf__estimator__n_estimators': [100, 200, 300], 
               'clf__estimator__random_state': [42],
              'clf__estimator__learning_rate': [0.05]} 
 
