@@ -4,19 +4,16 @@
 ## Disaster Response Pipeline
 ### A Figure 8 dataset
 
-
 ### Table of Contents
-
 1. [Required Libraries](#libraries)
 2. [Introduction](#introduction)
-3. [Project Motivation](#motivation)
-4. [Files](#files)
-5. [ETL Pipeline](#ETL)
-6. [ML Pipeline](#ML)
-7. [Flask Web App](#Flask)
-8. [Plot Demos](#demo1)
-9. [Classification Demo](#demo2)
-10. [Licensing, Authors, and Acknowledgements](#licensing)
+3. [Files](#files)
+4. [ETL Pipeline](#ETL)
+5. [ML Pipeline](#ML)
+6. [Flask Web App](#Flask)
+7. [Plot Demos](#demo1)
+8. [Classification Demo](#demo2)
+9. [Licensing, Authors, and Acknowledgements](#licensing)
 
 
 ## 1. Required Libraries <a name="libraries"></a>
@@ -28,16 +25,19 @@ Besides the libraries included in the Anaconda distribution for Python 3.6 the f
 ## 2. Introduction <a name="introduction"></a>
 [Figure 8](https://www.figure-eight.com/) helps companies transform they data by providing human annotators and machine learning to annotate data at all scales.
 Disaster response is one of events that greatly benefits from data and machine learning modeling. In this project I propose an approach to social media messages annotation.
-
-
-## 3. Project Motivation <a name="motivation"></a>
 NLP allows the extraction of great significance in text, understanding how a model classifies and predicts needed responses in disaster cases provides good understanding of the power of words in functional responses.
 
+In this project I will be using a data set containing messages that were sent during disaster events and build a classifier to identify messages or events in need of attention or relief.
+The data cleaning and model building will be using pipelines, automating repetitive steps, and preventing data leakage.
 
-## 4. Files <a name="files"></a>
+The best performing machine learning model will be deployed as a web app where the user can test their own tentative messages to see how they would be classified with the models I selected and trained. 
+Through the web app the user can also consult visualizations of the clean and transformed data.
+
+
+## 3. Files <a name="files"></a>
 Data was downloaded from [Figure 8](https://www.figure-eight.com/dataset/combined-disaster-response-data/).
 
-#### 5. ETL Pipeline <a name="ETL"></a>
+#### 4. ETL Pipeline <a name="ETL"></a>
 
 File _data/process_data.py_ contains data cleaning pipeline that:
 
@@ -46,7 +46,7 @@ File _data/process_data.py_ contains data cleaning pipeline that:
 - Cleans the data
 - Stores it in a **SQLite database**
 
-#### 6. ML Pipeline <a name="ML"></a>
+#### 5. ML Pipeline <a name="ML"></a>
 
 File _models/train_classifier.py_ contains machine learning pipeline that:
 
@@ -57,7 +57,7 @@ File _models/train_classifier.py_ contains machine learning pipeline that:
 - Outputs result on the test set
 - Exports the final model as a pickle file
 
-#### 7. Flask Web App <a name="Flask"></a>
+#### 6. Flask Web App <a name="Flask"></a>
 
 Run the following commands in the project's root directory to set up your database and model.
 
@@ -72,10 +72,10 @@ python run.py
 
 Go to http://0.0.0.0:3001/
 
-##### 8. Plot Demos <a name="demo1"></a>
+##### 7. Plot Demos <a name="demo1"></a>
 ![Plot demos](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/plots_demo.gif)
 
-##### 9. Classification Demo <a name="demo2"></a>
+##### 8. Classification Demo <a name="demo2"></a>
 ![Classification demos](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/classification_demo.gif)
 
 
@@ -85,5 +85,5 @@ ML Pipeline Preparation - jupyter notebook for model selection and evaluation
 
 
 
-## 10. Licensing, Authors, Acknowledgements<a name="licensing"></a>
+## 9. Licensing, Authors, Acknowledgements<a name="licensing"></a>
 I am greatly thankful for the incredible challenge provided by Udacity.
