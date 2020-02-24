@@ -143,7 +143,7 @@ def build_model():
                 ('best', TruncatedSVD()),
                 ('tfidf', TfidfTransformer())])), 
         ('start_verb', StartVerbExtractor())])), 
-    ('clf', MultiOutputClassifier(AdaBoostClassifier()))
+    ('clf', MultiOutputClassifier(AdaBoostClassifier(random_state=42)))
     ])
     
     # Parameters
