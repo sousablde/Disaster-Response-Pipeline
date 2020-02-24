@@ -1,4 +1,4 @@
-![fig8](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/f8logo.PNG)
+![fig8](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/Images/f8logo.PNG)
 
 # Data Science Nanodegree
 ## Disaster Response Pipeline
@@ -73,10 +73,10 @@ python run.py
 Go to http://0.0.0.0:3001/
 
 ##### 7. Plot Demos <a name="demo1"></a>
-![Plot demos](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/plots_demo.gif)
+![Plot demos](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/Images/plots_demo.gif)
 
 ##### 8. Classification Demo <a name="demo2"></a>
-![Classification demos](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/classification_demo.gif)
+![Classification demos](https://github.com/sousablde/Disaster-Response-Pipeline/blob/master/Images/classification_demo.gif)
 
 
 Notebooks
