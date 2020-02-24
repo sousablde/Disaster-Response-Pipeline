@@ -76,25 +76,6 @@ def clean_data(df):
     # Remove duplicates
     df.drop_duplicates(inplace=True)
     
-    #Checking for imbalances
-    df1 = df.copy()
-    df1.drop(['id', 'message', 'original'], axis=1, inplace=True)
-
-    df1.shape
-
-    rowCnt = 6
-    colCnt = 6     # cols
-    subCnt = 1     # initialize plot number
-
-    fig = plt.figure(figsize=(20,30))
-
-    for i in df1.columns:
-        fig.add_subplot(rowCnt, colCnt, subCnt)
-
-        plt.xlabel(i, fontsize=12)
-        sns.countplot(df1[i])
-        subCnt = subCnt + 1
-    fig.subplots_adjust(top = 1, wspace = 1, hspace = 1)
     
     return df
 
